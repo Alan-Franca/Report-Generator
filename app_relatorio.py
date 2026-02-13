@@ -44,11 +44,10 @@ def gerar_pdf(df, col_x, col_y, titulo_relatorio, cor_personalizada):
     plt.ylabel(col_y)
     plt.xticks(rotation=45)
     plt.tight_layout()
-    
     temp_chart = tempfile.NamedTemporaryFile(delete=False, suffix=".png")
+    temp_chart.close()
     plt.savefig(temp_chart.name)
     plt.close()
-
     pdf.image(temp_chart.name, x=10, y=None, w=190)
     os.unlink(temp_chart.name)
 
