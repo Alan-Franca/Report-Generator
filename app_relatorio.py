@@ -210,7 +210,7 @@ if arquivo_upload is not None:
         
         titulo_pdf = st.text_input("Nome do Arquivo PDF:", "Relatorio_Dashboard")
         
-        if st.button("📄 Gerar PDF"):
+        if st.button("Gerar PDF"):
             if not st.session_state['graficos_adicionados']:
                 st.warning("Adicione gráficos antes de gerar o PDF.")
             else:
